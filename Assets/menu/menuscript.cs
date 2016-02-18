@@ -3,6 +3,7 @@ using System.Collections;
 
 public class menuscript : MonoBehaviour {
 	public static int menuposition = 0;
+	public static int menusize = 2;
 	// Use this for initialization
 	void Start () {
 		 menuposition = 0;
@@ -17,7 +18,7 @@ public class menuscript : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown("down")){
-			if(menuscript.menuposition < 2){
+			if(menuscript.menuposition < menusize){
 				menuscript.menuposition += 1;
 			}
 		}
