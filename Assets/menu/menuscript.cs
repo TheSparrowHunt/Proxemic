@@ -21,7 +21,5 @@ public class menuscript : MonoBehaviour {
 				menuscript.menuposition += 1;
 			}
 		}
-			
-		print (menuscript.menuposition);
 	}
 }
