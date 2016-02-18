@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+//using UnityEngine.SceneManagement;
 
 public class menuscript : MonoBehaviour {
 	public static int menuposition = 0;
@@ -20,6 +21,18 @@ public class menuscript : MonoBehaviour {
 		if (Input.GetButtonDown("down")){
 			if(menuscript.menuposition < menusize){
 				menuscript.menuposition += 1;
+			}
+		}
+
+		if (Input.GetButtonDown ("space")) {
+			switch (menuposition) {
+			case 0:
+				Application.LoadLevel ("Tutorial");
+				//SceneManager.LoadLevel ("Tutorial", LoadSceneMode.Single);
+				break;
+			default:
+				//nothing
+				break;
 			}
 		}
 	}
