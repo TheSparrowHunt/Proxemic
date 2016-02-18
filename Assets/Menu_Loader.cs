@@ -15,7 +15,36 @@ public class Menu_Loader : MonoBehaviour {
 		PlayerPrefs.SetInt("NeutralCounter", 0);
 		PlayerPrefs.SetInt("Mood", 0);
 
-		if (PlayerPrefs.HasKey(
+		/*if (!PlayerPrefs.HasKey("Ending0")){
+			PlayerPrefs.SetInt("Ending0", 0);
+		}*/
+		if (!PlayerPrefs.HasKey("Ending1")){
+			PlayerPrefs.SetInt("Ending1", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending1")){
+			PlayerPrefs.SetInt("Ending1", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending2")){
+			PlayerPrefs.SetInt("Ending2", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending3")){
+			PlayerPrefs.SetInt("Ending3", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending4")){
+			PlayerPrefs.SetInt("Ending4", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending5")){
+			PlayerPrefs.SetInt("Ending5", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending6")){
+			PlayerPrefs.SetInt("Ending6", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending7")){
+			PlayerPrefs.SetInt("Ending7", 0);
+		}
+
+		//DEBUG
+		PlayerPrefs.SetInt("Ending0", 0);
 	}
 	
 	// Update is called once per frame
