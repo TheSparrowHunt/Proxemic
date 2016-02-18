@@ -13,7 +13,7 @@ public class arrow : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (transform.localScale.y <= -0.3f || transform.localScale.y >= 0.3f) {
+		if (transform.localScale.y <= -0.2f || transform.localScale.y >= 0.2f) {
 			scalarchange = -scalarchange;
 		}
 		scalar = scalarchange * Time.deltaTime;
