@@ -30,6 +30,9 @@ public class menuscript : MonoBehaviour {
 				Application.LoadLevel ("Tutorial");
 				//SceneManager.LoadLevel ("Tutorial", LoadSceneMode.Single);
 				break;
+			case 2:
+				Application.Quit ();
+				break;
 			default:
 				//nothing
 				break;

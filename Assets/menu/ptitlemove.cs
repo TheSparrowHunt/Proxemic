@@ -13,7 +13,7 @@ public class ptitlemove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Yloc =  0.5f * Mathf.Cos(counter * Mathf.Deg2Rad);
-		GetComponent<Rigidbody2D> ().velocity = new Vector2 (0.0f, Yloc) * 100 * Time.deltaTime;
+		GetComponent<Rigidbody2D> ().velocity = new Vector2 (0.0f, Yloc);
 		counter++;
 	}
 }
