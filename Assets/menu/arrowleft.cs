@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class arrow : MonoBehaviour {
+public class arrowleft : MonoBehaviour {
+
 	public float scalar;
 	public float scalarchange;
 	Vector3 menu0;
@@ -14,7 +15,7 @@ public class arrow : MonoBehaviour {
 	void Start () {
 
 
-		transform.position = new Vector3 (0, menu0.y, 0);
+		transform.position = new Vector3 (menu0.x - 2, menu0.y, 0);
 		scalar = -1.0f;
 		scalarchange = -1.0f;
 	}
@@ -29,21 +30,21 @@ public class arrow : MonoBehaviour {
 		transform.localScale += new Vector3 (0, scalar, 0);
 
 		//DEBUG
-		print(menuscript.menuposition);
+		//print(menuscript.menuposition);
 
 		//checking the menu position
 		switch (menuscript.menuposition) {
 		case 0:
 			menu0 = GameObject.Find ("menustart").transform.position;
-			transform.position = new Vector3 (0, menu0.y, 0);
+			transform.position = new Vector3 (-1.75f, menu0.y, 0);
 			break;
 		case 1:
 			menu1 = GameObject.Find ("menuoptions").transform.position;
-			transform.position = new Vector3 (0, menu1.y, 0);
+			transform.position = new Vector3 (-2.25f, menu1.y, 0);
 			break;
 		case 2:
 			menu2 = GameObject.Find ("menuexit").transform.position;
-			transform.position = new Vector3 (0, menu2.y, 0);
+			transform.position = new Vector3 (-1.5f, menu2.y, 0);
 			break;
 		default:
 			//do nothing

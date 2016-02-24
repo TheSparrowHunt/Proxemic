@@ -26,8 +26,8 @@ public class savemarkercheck1 : MonoBehaviour {
 	}
 
 	void Check(){
-		if (PlayerPrefs.HasKey ("Ending0")) {
-			if (PlayerPrefs.GetInt ("Ending0") == 1) {
+		if (PlayerPrefs.HasKey (ending)) {
+			if (PlayerPrefs.GetInt (ending) == 1) {
 				//sets the alpha
 				GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f);
 			} else {
