@@ -9,7 +9,7 @@ public class playermovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 2500.0f;
+		speed = 5000.0f;
 	}
 	
 	// Update is called once per frame
@@ -60,10 +60,17 @@ public class playermovement : MonoBehaviour {
 
 	}
 	//lateUpdate makes it look smoother
-	void LateUpdate(){
-		direction = new Vector2 (xvel  * Time.deltaTime, yvel  * Time.deltaTime);
-		//GetComponent<Rigidbody2D> ().velocity = direction;
-		transform.Translate (xvel * (Time.deltaTime/1000.0f), yvel * (Time.deltaTime/1000.0f), 0.0f);
+	void FixedUpdate(){
+		//version that works independant of framerate, but makes it look jerky at times
+		direction = new Vector2 (xvel  * (Time.deltaTime), yvel  * (Time.deltaTime));
+
+		//version that works doesn't work independant of framerate, but looks smoother
+		//direction = new Vector2 (xvel  * (0.0083f), yvel  * (0.0083f));
+
+
+		GetComponent<Rigidbody2D> ().AddForce(direction);
+
+		//transform.Translate (xvel * (Time.deltaTime/1000.0f), yvel * (Time.deltaTime/1000.0f), 0.0f);
 
 		//DEBUG
 		//print (xvel);
