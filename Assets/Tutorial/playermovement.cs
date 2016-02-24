@@ -9,7 +9,7 @@ public class playermovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 5000.0f;
+		speed = 150.0f;
 	}
 	
 	// Update is called once per frame
@@ -68,7 +68,8 @@ public class playermovement : MonoBehaviour {
 		//direction = new Vector2 (xvel  * (0.0083f), yvel  * (0.0083f));
 
 
-		GetComponent<Rigidbody2D> ().AddForce(direction);
+		//GetComponent<Rigidbody2D> ().AddForce(direction);
+		GetComponent<Rigidbody2D> ().velocity = direction;
 
 		//transform.Translate (xvel * (Time.deltaTime/1000.0f), yvel * (Time.deltaTime/1000.0f), 0.0f);
 

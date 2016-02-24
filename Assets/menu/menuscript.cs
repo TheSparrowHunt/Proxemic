@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 //using UnityEngine.SceneManagement;
 
 public class menuscript : MonoBehaviour {
@@ -7,7 +8,7 @@ public class menuscript : MonoBehaviour {
 	public static int menusize = 2;
 	// Use this for initialization
 	void Start () {
-		Application.targetFrameRate = 120;
+		Application.targetFrameRate = 60;
 		 menuposition = 0;
 	}
 	
@@ -28,8 +29,8 @@ public class menuscript : MonoBehaviour {
 		if (Input.GetButtonDown ("space")) {
 			switch (menuposition) {
 			case 0:
-				Application.LoadLevel ("Tutorial");
-				//SceneManager.LoadLevel ("Tutorial", LoadSceneMode.Single);
+				//Application.LoadLevel ("Tutorial");
+				SceneManager.LoadScene ("Tutorial", LoadSceneMode.Single);
 				break;
 			case 2:
 				Application.Quit ();
