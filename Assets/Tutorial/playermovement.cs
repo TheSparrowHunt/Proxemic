@@ -32,6 +32,8 @@ public class playermovement : MonoBehaviour {
 			xvel += speed;
 		}
 
+
+		//pythagoras implementation so you travel at the same speed regardless of direction.
 		if (xvel != 0.0f && yvel != 0.0f) {
 			if (xvel > 0) {
 				if (yvel > 0) {
