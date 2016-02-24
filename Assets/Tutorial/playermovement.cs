@@ -9,7 +9,7 @@ public class playermovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 150.0f;
+		speed = 2500.0f;
 	}
 	
 	// Update is called once per frame
@@ -54,12 +54,19 @@ public class playermovement : MonoBehaviour {
 			}
 		}
 
+
+
+
+
+	}
+	//lateUpdate makes it look smoother
+	void LateUpdate(){
 		direction = new Vector2 (xvel  * Time.deltaTime, yvel  * Time.deltaTime);
-		GetComponent<Rigidbody2D> ().velocity = direction;
+		//GetComponent<Rigidbody2D> ().velocity = direction;
+		transform.Translate (xvel * (Time.deltaTime/1000.0f), yvel * (Time.deltaTime/1000.0f), 0.0f);
+
 		//DEBUG
-		print (xvel);
-
-
+		//print (xvel);
 
 	}
 }
