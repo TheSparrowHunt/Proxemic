@@ -7,6 +7,7 @@ public class menuscript : MonoBehaviour {
 	public static int menusize = 2;
 	// Use this for initialization
 	void Start () {
+		Application.targetFrameRate = 120;
 		 menuposition = 0;
 	}
 	
