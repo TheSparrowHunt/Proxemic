@@ -16,8 +16,8 @@ public class arrowright : MonoBehaviour {
 
 
 		transform.position = new Vector3 (menu0.x - 2, menu0.y, 0);
-		scalar = -1.0f;
-		scalarchange = -1.0f;
+		scalar = -0.01f;
+		scalarchange = -0.01f;
 	}
 
 	// Update is called once per frame
@@ -26,7 +26,7 @@ public class arrowright : MonoBehaviour {
 		if (transform.localScale.y <= -0.2f || transform.localScale.y >= 0.2f) {
 			scalarchange = -scalarchange;
 		}
-		scalar = scalarchange * Time.deltaTime;
+		scalar = scalarchange;
 		transform.localScale += new Vector3 (0, scalar, 0);
 
 		//DEBUG
