@@ -31,7 +31,7 @@ public class savemarkercheck1 : MonoBehaviour {
 				//sets the alpha
 				GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f);
 			} else {
-				GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0.5f);
+				GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0.2f);
 			}
 		} else {
 			GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0.0f);
