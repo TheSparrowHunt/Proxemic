@@ -9,7 +9,7 @@ public class playermovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 150.0f;
+		speed = 3.0f;
 	}
 	
 	// Update is called once per frame
@@ -55,14 +55,12 @@ public class playermovement : MonoBehaviour {
 		}
 
 
-
-
-
-	}
-	//lateUpdate makes it look smoother
-	void FixedUpdate(){
 		//version that works independant of framerate, but makes it look jerky at times
-		direction = new Vector2 (xvel  * (Time.deltaTime), yvel  * (Time.deltaTime));
+		//xvel = Mathf.Round(xvel);
+		//yvel = Mathf.Round(yvel);
+		//direction = new Vector2 (xvel  * (Time.deltaTime), yvel  * (Time.deltaTime));
+
+		direction = new Vector2 (xvel, yvel);
 
 		//version that works doesn't work independant of framerate, but looks smoother
 		//direction = new Vector2 (xvel  * (0.0083f), yvel  * (0.0083f));
@@ -75,6 +73,12 @@ public class playermovement : MonoBehaviour {
 
 		//DEBUG
 		//print (xvel);
+
+
+	}
+	//lateUpdate makes it look smoother
+	void FixedUpdate(){
+		
 
 	}
 }

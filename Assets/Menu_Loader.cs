@@ -6,7 +6,8 @@ public class Menu_Loader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		testvalue = 0;
+		
+		//values that will be calculated for ending
 		PlayerPrefs.SetInt("InteractionCounter", 0);
 		PlayerPrefs.SetInt("FailedCounter", 0);
 		PlayerPrefs.SetInt("SuccessfulCounter", 0);
@@ -15,9 +16,17 @@ public class Menu_Loader : MonoBehaviour {
 		PlayerPrefs.SetInt("NeutralCounter", 0);
 		PlayerPrefs.SetInt("Mood", 0);
 
-		/*if (!PlayerPrefs.HasKey("Ending0")){
+
+		//values that will be used for navigation and time changes
+		PlayerPrefs.SetString("PreviousRoom", "");
+		PlayerPrefs.SetInt("HoboInteracted", 0);
+
+
+
+
+		if (!PlayerPrefs.HasKey("Ending0")){
 			PlayerPrefs.SetInt("Ending0", 0);
-		}*/
+		}
 		if (!PlayerPrefs.HasKey("Ending1")){
 			PlayerPrefs.SetInt("Ending1", 0);
 		}
@@ -44,7 +53,7 @@ public class Menu_Loader : MonoBehaviour {
 		}
 
 		//DEBUG
-		PlayerPrefs.SetInt("Ending0", 0);
+		//PlayerPrefs.SetInt("Ending0", 0);
 	}
 	
 	// Update is called once per frame
