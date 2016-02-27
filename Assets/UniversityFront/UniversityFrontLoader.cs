@@ -19,7 +19,7 @@ public class UniversityFrontLoader : MonoBehaviour {
 			player = Instantiate (Resources.Load ("Prefab/player"), playerPositionFromLobby, Quaternion.identity) as GameObject;
 		}
 		//sets the string ready for when player goes into next scene
-		PlayerPrefs.SetString ("PreviousRoom", "Lobby");
+		PlayerPrefs.SetString ("PreviousRoom", "UniversityFront");
 
 
 	}
@@ -30,5 +30,4 @@ public class UniversityFrontLoader : MonoBehaviour {
 	}
 
 
-	}
 }

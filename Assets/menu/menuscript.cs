@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-//using UnityEngine.SceneManagement;
 
 public class menuscript : MonoBehaviour {
 	public static int menuposition = 0;
