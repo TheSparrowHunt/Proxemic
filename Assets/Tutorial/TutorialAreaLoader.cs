@@ -9,7 +9,9 @@ public class TutorialAreaLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+
+
 		//placing the player at the correct position relative to the previous room.
 		if (PlayerPrefs.GetString ("PreviousRoom") == "UniversityFront") {
 			//instantiates the player
@@ -20,6 +22,10 @@ public class TutorialAreaLoader : MonoBehaviour {
 		//sets the string ready for when player goes into next scene
 		PlayerPrefs.SetString ("PreviousRoom", "Tutorial");
 
+		GameObject StateController = GameObject.Find ("StateController");
+
+		StateController.GetComponent<StateController>().gameState = "OverWorld";
+		StateController.GetComponent<StateController>().room = "Tutorial";
 
 	}
 	
