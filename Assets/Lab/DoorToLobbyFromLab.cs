@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class SendToUniversityFront : MonoBehaviour {
+public class DoorToLobbyFromLab : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,10 +15,9 @@ public class SendToUniversityFront : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		
 		if (other.gameObject.tag == "Player") {
-			
-			SceneManager.LoadScene ("UniversityFront", LoadSceneMode.Single);
+
+			SceneManager.LoadScene ("Lobby", LoadSceneMode.Single);
 		}
 	}
 }
