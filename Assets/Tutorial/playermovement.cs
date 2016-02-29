@@ -73,7 +73,7 @@ public class playermovement : MonoBehaviour {
 
 
 			//GetComponent<Rigidbody2D> ().AddForce(direction);
-			GetComponent<Rigidbody2D> ().velocity = direction;
+			GetComponent<Rigidbody2D> ().velocity = direction * Time.deltaTime * 60;
 
 			//transform.Translate (xvel * (Time.deltaTime/1000.0f), yvel * (Time.deltaTime/1000.0f), 0.0f);
 
