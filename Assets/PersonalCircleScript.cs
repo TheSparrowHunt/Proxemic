@@ -30,7 +30,7 @@ public class PersonalCircleScript : MonoBehaviour {
 		//nullcheck then sets this location to the location of the player
 		//probably should have done with tags, but I wasn't really paying attention when I coded this.
 		if (GameObject.Find ("player(Clone)") != null) {
-			transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0.4f);
+			transform.position = new Vector3(player.transform.position.x, player.transform.position.y-0.35f, 0.4f);
 		}
 
 	}
@@ -42,6 +42,7 @@ public class PersonalCircleScript : MonoBehaviour {
 			if (other.gameObject.name == "hobo") {
 				//trigger hobo conversation
 				print("Interacted with hobo");
+
 			}
 
 

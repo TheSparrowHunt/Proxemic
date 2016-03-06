@@ -4,6 +4,7 @@ using System.Collections;
 public class StateController : MonoBehaviour {
 	public string gameState;
 	public string room;
+	public string interacted;
 	public bool paused;
 
 	// Use this for initialization
@@ -11,10 +12,12 @@ public class StateController : MonoBehaviour {
 		gameState = "Menu";
 		room = "Menu";
 		paused = false; 
+		interacted = "";
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		print (gameState);
 		if (gameState == "Menu") {
 			//if menu music isn't already playing, play menu music
 		}
@@ -28,7 +31,9 @@ public class StateController : MonoBehaviour {
 				}
 			} else if (gameState == "Battle") {
 				//change music to hobo battle music
-				paused = true;
+				if (!paused) {
+					paused = true;
+				}
 			}
 		}
 

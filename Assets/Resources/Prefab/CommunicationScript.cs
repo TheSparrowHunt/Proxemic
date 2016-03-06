@@ -6,6 +6,7 @@ public class CommunicationScript : MonoBehaviour {
 	//Vector3 position;
 	GameObject player;
 	int sizeMod;
+	GameObject makeBattle;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,7 @@ public class CommunicationScript : MonoBehaviour {
 		//nullcheck then sets this location to the location of the player
 		//probably should have done with tags, but I wasn't really paying attention when I coded this.
 		if (GameObject.Find ("player(Clone)") != null) {
-			transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0.5f);
+			transform.position = new Vector3(player.transform.position.x, player.transform.position.y-0.35f, 0.5f);
 		}
 	
 	}
@@ -41,8 +42,11 @@ public class CommunicationScript : MonoBehaviour {
 		//and have it instantiate the object that makes the conversation/battles
 		if (other.gameObject.tag == "Interactable") {
 			if (other.gameObject.name == "hobo") {
+				GameObject StateController = GameObject.Find ("StateController");
+				StateController.GetComponent<StateController>().interacted = "hobo";
 				//trigger hobo conversation
 				print("Interacted with hobo");
+				makeBattle = Instantiate (Resources.Load ("Prefab/MakeBattle"), new Vector3(0.0f,0.0f,-1.0f), Quaternion.identity) as GameObject;
 			}
 
 
