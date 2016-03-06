@@ -31,7 +31,7 @@ public class CommunicationScript : MonoBehaviour {
 		//nullcheck then sets this location to the location of the player
 		//probably should have done with tags, but I wasn't really paying attention when I coded this.
 		if (GameObject.Find ("player(Clone)") != null) {
-			transform.position = player.transform.position;
+			transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0.5f);
 		}
 	
 	}
