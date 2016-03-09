@@ -61,25 +61,15 @@ public class playermovement : MonoBehaviour {
 			}
 
 
-			//version that works independant of framerate, but makes it look jerky at times
-			//xvel = Mathf.Round(xvel);
-			//yvel = Mathf.Round(yvel);
-			//direction = new Vector2 (xvel  * (Time.deltaTime), yvel  * (Time.deltaTime));
-
-			direction = new Vector2 (xvel, yvel);
-
-			//version that works doesn't work independant of framerate, but looks smoother
-			//direction = new Vector2 (xvel  * (0.0083f), yvel  * (0.0083f));
 
 
-			//GetComponent<Rigidbody2D> ().AddForce(direction);
-			GetComponent<Rigidbody2D> ().velocity = direction;
 
-			//transform.Translate (xvel * (Time.deltaTime/1000.0f), yvel * (Time.deltaTime/1000.0f), 0.0f);
 
-			//DEBUG
-			//print (xvel);
+
 		}
+		direction = new Vector2 (xvel, yvel);
+		GetComponent<Rigidbody2D> ().velocity = direction;
+
 
 	}
 	//lateUpdate makes it look smoother
