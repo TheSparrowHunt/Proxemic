@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class whichEnd : MonoBehaviour {
 
-	public int WhatEnding = PlayerPrefs.SuccessfulCounter;
+	public int WhatEnding;
 
 	void Start () {
+		//grabs the suceesfulcounter from PlayerPrefs file
+		WhatEnding = PlayerPrefs.GetInt("SuccessfulCounter");
 
 		if (WhatEnding == 0) {
 
