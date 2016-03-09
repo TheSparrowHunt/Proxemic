@@ -5,7 +5,7 @@ using System.Collections;
 public class UniversityFrontLoader : MonoBehaviour {
 	public GameObject player = null;
 	public Vector3 playerPositionFromTutorial = new Vector3 (-8.5f, 0.0f, -1.0f);
-	public Vector3 playerPositionFromLobby = new Vector3 (0.0f, 0.0f, -1.0f);
+	public Vector3 playerPositionFromLobby = new Vector3 (0.0f, 4.0f, -1.0f);
 
 
 	// Use this for initialization
