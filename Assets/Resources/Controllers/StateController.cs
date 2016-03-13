@@ -17,7 +17,8 @@ public class StateController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print (gameState);
+		//DEBUG
+		//print (gameState);
 		if (gameState == "Menu") {
 			//if menu music isn't already playing, play menu music
 		}

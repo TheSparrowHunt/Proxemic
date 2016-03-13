@@ -41,11 +41,12 @@ public class CommunicationScript : MonoBehaviour {
 		//fill this with every interaction in the game
 		//and have it instantiate the object that makes the conversation/battles
 		if (other.gameObject.tag == "Interactable") {
-			if (other.gameObject.name == "hobo") {
+			if (other.gameObject.name == "hobo(Clone)") {
 				GameObject StateController = GameObject.Find ("StateController");
 				StateController.GetComponent<StateController>().interacted = "hobo";
-				//trigger hobo conversation
+
 				print("Interacted with hobo");
+
 				makeBattle = Instantiate (Resources.Load ("Prefab/MakeBattle"), new Vector3(0.0f,0.0f,-1.0f), Quaternion.identity) as GameObject;
 			}
 
