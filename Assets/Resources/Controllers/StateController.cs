@@ -7,8 +7,17 @@ public class StateController : MonoBehaviour {
 	public string interacted;
 	public bool paused;
 
+	public AudioSource[] music;
+	public AudioSource outOfBattle;
+	public AudioSource inBattle;
+
 	// Use this for initialization
 	void Start () {
+		music = GetComponents<AudioSource> ();
+
+		outOfBattle = music [0];
+		inBattle = music [1]; 
+
 		gameState = "Menu";
 		room = "Menu";
 		paused = false; 
@@ -26,12 +35,22 @@ public class StateController : MonoBehaviour {
 		//tutorial gamestate
 		if (room == "Tutorial") {
 			if (gameState == "OverWorld") {
-				//change music to tutorial area music
+				if (!outOfBattle.isPlaying) {
+					outOfBattle.Play ();
+				}
+				if (inBattle.isPlaying) {
+					inBattle.Stop ();
+				}
 				if (paused) {
 					paused = false;
 				}
 			} else if (gameState == "Battle") {
-				//change music to hobo battle music
+				if (!inBattle.isPlaying) {
+					inBattle.Play ();
+				}
+				if (outOfBattle.isPlaying) {
+					outOfBattle.Stop ();
+				}
 				if (!paused) {
 					paused = true;
 				}
