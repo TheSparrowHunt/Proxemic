@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngineUI;
+using UnityEngine.UI;
 using System.Collections;
 
 
