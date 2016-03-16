@@ -2,14 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameScript : MonoBehaviour {
-
+public class gameScript : MonoBehaviour {
 	public float timeLeft;
 	public Text timerText;
 	public Text nice;
 	public Text shit;
-//	public GameScript losing;
-
+	public GameObject loserbum;
+	//public gameScript losing;
 
 	void Start () {
 		UpdateText ();
@@ -20,17 +19,20 @@ public class GameScript : MonoBehaviour {
 	void FixedUpdate () {
 
 		timeLeft -= Time.deltaTime;
+		//loserbum = GetComponent<losing>();
 
+		losing losingScript = loserbum.GetComponent<losing>();
+		if (losingScript.lost == true) {
+			shit.text = "Shit!";
+			timerText.text = ""; 
+			nice.text = "";
+		}
 
-		if (timeLeft < 0) {
+		else if (timeLeft < 0) {
 			timeLeft = 0;
 		}
-//		if (losing.lost == false) {
-//			shit.text = "Shit.";
-//			timerText.text = "";
-//			nice.text = "";
-//		} else {
-		
+
+		else {
 			if (timeLeft == 0) {
 				timerText.text = "";
 				nice.text = "Nice!";
@@ -38,9 +40,9 @@ public class GameScript : MonoBehaviour {
 				UpdateText ();
 			}
 		}
-//}
+	}
 
-	void UpdateText() {
-			timerText.text = "" + Mathf.RoundToInt (timeLeft);
-		}
+	void UpdateText () {
+		timerText.text = "" + Mathf.RoundToInt (timeLeft);
+	}
 }
