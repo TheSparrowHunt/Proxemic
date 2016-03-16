@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class bottomcollectorscript : MonoBehaviour {
 	public float timeLeft;
-	public Text timerText;
-	public Text nice;
-	public Text shit;
+//	public Text timerText;
+//	public Text nice;
+//	public Text shit;
 	public bool lost;
 
 	//public gameScript losing;
 
 	void Start () {
-		UpdateText ();
+//		UpdateText ();
 		lost = false;
 	}
 
@@ -35,25 +35,26 @@ public class bottomcollectorscript : MonoBehaviour {
 		if (timeLeft < 0) {
 			timeLeft = 0;
 		}
-		if (lost == true && timeLeft > 0) {
-			shit.text = "Shit!";
-			timerText.text = "";
-			nice.text = "";
 
-		} else {
-			if (timeLeft == 0) {
-				timerText.text = "";
-				nice.text = "Nice!";
-				shit.text = "";
-			} else {
-				UpdateText ();
-			}
-		}
+//		if (lost == true && timeLeft > 0) {
+//			shit.text = "Shit!";
+//			timerText.text = "";
+//			nice.text = "";
+
+//		} else {
+//			if (timeLeft == 0) {
+//				timerText.text = "";
+//				nice.text = "Nice!";
+//				shit.text = "";
+//			} else {
+//				UpdateText ();
+//			}
+//		}
 	}
 
 
-	void UpdateText () {
-		timerText.text = "" + Mathf.RoundToInt (timeLeft);
-	}
+//	void UpdateText () {
+//		timerText.text = "" + Mathf.RoundToInt (timeLeft);
+//	}
 }
 
