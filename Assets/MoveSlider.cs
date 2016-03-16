@@ -9,7 +9,7 @@ using System.Collections;
 
 public class MoveSlider : MonoBehaviour {
 
-	public float speed = 10;
+	public float speed = 5;
 	public string axis = "Horizontal";
 	public Vector3 sliderPos = new Vector3(0.0f, -4.8f, 0.0f);
 	//public Boundary boundary;
@@ -37,7 +37,7 @@ public class MoveSlider : MonoBehaviour {
 //		gameObject.transform.position = sliderPos;
 
 		float xPos = gameObject.transform.position.x + (Input.GetAxis("Horizontal") * speed);
-		sliderPos = new Vector3 (Mathf.Clamp (xPos, -6.9f, 6.9f), -4.38f, -3.0f);
+		sliderPos = new Vector3 (Mathf.Clamp (xPos, -6.9f, 6.9f), -4.38f, 0.0f);
 		gameObject.transform.position = sliderPos;
 	}
 }
