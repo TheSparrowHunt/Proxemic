@@ -7,6 +7,9 @@ public class hoboBattleControl : MonoBehaviour {
 	private GameObject hobotext0;
 	private bool hobotext0generated;
 
+	private GameObject hobogame0;
+	private bool hobogame0generated;
+
 
 	private float timer;
 	// Use this for initialization
@@ -21,6 +24,13 @@ public class hoboBattleControl : MonoBehaviour {
 			if (!hobotext0generated) {
 				hobotext0 = Instantiate (Resources.Load ("Prefab/hoboText/hobotext0"), new Vector3 (1.0f, 4.5f, -3.0f), Quaternion.identity) as GameObject;
 				hobotext0generated = true;
+			}
+		}
+
+		if (timer >= 1.5f) {
+			if (!hobogame0generated) {
+				hobogame0 = Instantiate (Resources.Load ("Prefab/hoboboxes/Hoboboxesinstantiater"), new Vector3 (1.0f, 4.5f, -3.0f), Quaternion.identity) as GameObject;
+				hobogame0generated = true;
 			}
 		}
 
