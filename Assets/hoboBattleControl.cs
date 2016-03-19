@@ -108,9 +108,10 @@ public class hoboBattleControl : MonoBehaviour {
 				GameObject StateController = GameObject.Find ("StateController");
 				StateController.GetComponent<StateController>().gameState = "OverWorld";
 				//setting the successfulcounter
-				if (status) {
-					int successfulCounter = PlayerPrefs.GetInt ("SuccessfulCounter");
-					PlayerPrefs.SetInt("SuccessfulCounter", successfulCounter+1);
+				if (!status) {
+					int successfulCounter = PlayerPrefs.GetInt ("SuccessfulCounter") + 1;
+					PlayerPrefs.SetInt("SuccessfulCounter", successfulCounter);
+					print(PlayerPrefs.GetInt ("SuccessfulCounter"));
 				} else {
 
 				}
