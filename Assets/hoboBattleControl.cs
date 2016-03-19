@@ -14,7 +14,7 @@ public class hoboBattleControl : MonoBehaviour {
 	private bool hoboGameDeleted = false;
 
 	private GameObject statusChecker;
-	private bool statusChecked = false;
+	//private bool statusChecked = false;
 
 	//catch/dont catch the Sorry
 	public bool status = true;
