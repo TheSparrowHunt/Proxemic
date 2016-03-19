@@ -9,6 +9,8 @@ public class bottomcollectorscript : MonoBehaviour {
 //	public Text shit;
 	public bool lost;
 
+	private GameObject controller;
+
 	//public gameScript losing;
 
 	void Start () {
@@ -22,6 +24,12 @@ public class bottomcollectorscript : MonoBehaviour {
 		//Check the provided Collider2D parameter other to see if it is tagged "Sorry", if it is...
 		if (other.gameObject.CompareTag ("Sorry")) {
 			//gameObject.SetActive (false);
+
+			controller = GameObject.Find ("hoboBattleController(Clone)");
+			if (controller != null) {
+				controller.GetComponent<hoboBattleControl>().status = false;
+			}
+
 			lost = true;
 		}
 	}
@@ -35,6 +43,9 @@ public class bottomcollectorscript : MonoBehaviour {
 		if (timeLeft < 0) {
 			timeLeft = 0;
 		}
+
+
+
 
 //		if (lost == true && timeLeft > 0) {
 //			shit.text = "Shit!";

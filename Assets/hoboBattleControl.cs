@@ -5,10 +5,27 @@ public class hoboBattleControl : MonoBehaviour {
 	private int counter;
 
 	private GameObject hobotext0;
-	private bool hobotext0generated;
+	private bool hobotext0generated = false;
 
 	private GameObject hobogame0;
-	private bool hobogame0generated;
+	private bool hobogame0generated = false;
+
+	private GameObject[] deleteList;
+	private bool hoboGameDeleted = false;
+
+	private GameObject statusChecker;
+	private bool statusChecked = false;
+
+	//catch/dont catch the Sorry
+	public bool status = true;
+
+	private bool responseMade = false;
+
+	//the whole battle scene
+	private GameObject[] battleList;
+	private bool destroyBattleList = false;
+
+
 
 
 	private float timer;
@@ -31,6 +48,75 @@ public class hoboBattleControl : MonoBehaviour {
 			if (!hobogame0generated) {
 				hobogame0 = Instantiate (Resources.Load ("Prefab/hoboboxes/Hoboboxesinstantiater"), new Vector3 (1.0f, 4.5f, -3.0f), Quaternion.identity) as GameObject;
 				hobogame0generated = true;
+			}
+		}
+
+		/*
+		if (timer >= 7.9f) {
+			if (!statusChecked) {
+				statusChecker = GameObject.Find ("loserbum(Clone)");
+				if (statusChecker != null) {
+					status = statusChecker.GetComponent<Bottomcollectorscript>.Lost;
+				}
+
+			}
+		}*/
+
+
+		if (timer >= 8.0f) {
+			if (!hoboGameDeleted) {
+				deleteList = GameObject.FindGameObjectsWithTag ("HoboGame");
+				GameObject sorry = GameObject.FindGameObjectWithTag ("Sorry");
+
+				for (int i = 0; i < deleteList.Length; i++) {
+					if (deleteList [i] != null) {
+						Destroy (deleteList [i]);
+					}
+				}
+				Destroy (sorry);
+
+				hoboGameDeleted = true;
+			}
+
+		}
+
+
+		if (timer >= 8.5f) {
+			if (!responseMade) {
+				if (status) {
+					//make "sorry, I don't"
+				} else {
+					//make "..."
+				}
+
+
+				responseMade = true;
+			}
+		}
+
+
+		if (timer >= 12.0f) {
+			if (!destroyBattleList) {
+				battleList = GameObject.FindGameObjectsWithTag ("HoboConvo");
+				for (int i = 0; i < battleList.Length; i++) {
+					//DEBUG
+					//print (i);
+					if (battleList [i] != null) {
+						Destroy (battleList [i]);
+					}
+				}
+				GameObject StateController = GameObject.Find ("StateController");
+				StateController.GetComponent<StateController>().gameState = "OverWorld";
+				//setting the successfulcounter
+				if (status) {
+					int successfulCounter = PlayerPrefs.GetInt ("SuccessfulCounter");
+					PlayerPrefs.SetInt("SuccessfulCounter", successfulCounter+1);
+				} else {
+
+				}
+
+				Destroy (gameObject);
+				destroyBattleList = true;
 			}
 		}
 

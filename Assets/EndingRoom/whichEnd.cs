@@ -23,7 +23,7 @@ public class whichEnd : MonoBehaviour {
 
 		if (WhatEnding == 2) {
 
-			SceneManager.LoadScene ("Ending_1");
+			SceneManager.LoadScene ("Ending_2");
 
 		}
 	}

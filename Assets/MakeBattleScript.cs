@@ -15,6 +15,8 @@ public class MakeBattleScript : MonoBehaviour {
 		otherConverser = Instantiate (Resources.Load ("Prefab/hobodrawn_0"), new Vector3(7.0f,0.0f,-2.0f), Quaternion.identity) as GameObject;
 		protConverser = Instantiate (Resources.Load ("Prefab/protdrawn_0"), new Vector3(-7.0f,0.0f,-2.0f), Quaternion.identity) as GameObject;
 		controller = Instantiate (Resources.Load ("Prefab/hoboBattleController"), new Vector3 (-7.0f, 0.0f, -2.0f), Quaternion.identity) as GameObject;
+
+		Destroy (gameObject);
 	}
 	
 	// Update is called once per frame
