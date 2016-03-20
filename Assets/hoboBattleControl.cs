@@ -20,10 +20,16 @@ public class hoboBattleControl : MonoBehaviour {
 	public bool status = true;
 
 	private bool responseMade = false;
+	private bool responseMade2 = false;
+
+	private GameObject hobotext1;
+	private bool hobotext1generated = false;
 
 	//the whole battle scene
 	private GameObject[] battleList;
 	private bool destroyBattleList = false;
+
+	private GameObject loseText1;
 
 
 
@@ -37,6 +43,8 @@ public class hoboBattleControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//DEBUG
+		//print (status);
 		if (timer >= 0.5f) {
 			if (!hobotext0generated) {
 				hobotext0 = Instantiate (Resources.Load ("Prefab/hoboText/hobotext0"), new Vector3 (1.0f, 4.5f, -3.0f), Quaternion.identity) as GameObject;
@@ -82,15 +90,35 @@ public class hoboBattleControl : MonoBehaviour {
 
 
 		if (timer >= 8.5f) {
+			//DEBUG
+			//print (status);
 			if (!responseMade) {
 				if (status) {
-					//make "sorry, I don't"
+					hobotext1 = Instantiate (Resources.Load ("Prefab/hoboText/hobotextwin"), new Vector3 (-6.0f, 4.5f, -3.0f), Quaternion.identity) as GameObject;
 				} else {
-					//make "..."
+					hobotext1 = Instantiate (Resources.Load ("Prefab/hoboText/hobotextlose0"), new Vector3 (-6.0f, 4.5f, -3.0f), Quaternion.identity) as GameObject;
 				}
 
 
 				responseMade = true;
+			}
+		}
+
+		if (timer >= 9.5f) {
+			//DEBUG
+			//print (status);
+			if (!responseMade2) {
+				Destroy (hobotext0);
+
+
+				if (status) {
+					//nothing
+				} else {
+					loseText1 = Instantiate (Resources.Load ("Prefab/hoboText/hobotextlose1"), new Vector3 (1.0f, 4.5f, -3.0f), Quaternion.identity) as GameObject;
+				}
+
+
+				responseMade2 = true;
 			}
 		}
 
