@@ -8,6 +8,11 @@ public class MoveSliderVert : MonoBehaviour {
 	public string axis = "Vertical";
 	public Vector3 sliderPos = new Vector3(-8.0f, 0.0f, -3.0f);
 	public bool lose;
+
+
+	private GameObject controller;
+
+
 	// Use this for initialization
 	void Start () {
 		lose = false;
@@ -21,7 +26,15 @@ public class MoveSliderVert : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
+
+
+		controller = GameObject.Find ("metalBattleControl(Clone)");
+		if (controller != null) {
+			controller.GetComponent<metalBattleControl>().status = false;
+		}
 		lose = true;
+
+
 //		print (lose);
 	}
 }

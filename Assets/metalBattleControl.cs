@@ -39,10 +39,19 @@ public class metalBattleControl : MonoBehaviour {
 	private GameObject text7;
 	private bool madeText7 = false;
 
+	private GameObject text8;
+	private bool madeText8 = false;
+
+	private GameObject text9;
+	private bool madeText9 = false;
+
+	private GameObject text10;
+	private bool madeText10 = false;
+
 	public bool status = true;
 
 
-
+	private GameObject[] battleList;
 
 
 
@@ -74,7 +83,7 @@ public class metalBattleControl : MonoBehaviour {
 		if (timer >= 3.0f) {
 			if (!madeText2) {
 				
-				text1 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText2"), playerPosition, Quaternion.identity) as GameObject;
+				text2 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText2"), playerPosition, Quaternion.identity) as GameObject;
 
 				madeText2 = true;
 			}
@@ -89,8 +98,118 @@ public class metalBattleControl : MonoBehaviour {
 			}
 		}
 
+		if (timer >= 9.0f) {
+			if (!madeText3) {
+				Destroy (text1);
+				text3 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText3"), otherPosition, Quaternion.identity) as GameObject;
+
+				madeText3 = true;
+			}
+		}
+
+		if (timer >= 10.0f) {
+			if (!madeText4) {
+				Destroy (text3);
+				text4 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText4"), otherPosition, Quaternion.identity) as GameObject;
+
+				madeText4 = true;
+			}
+		}
+
+		if (timer >= 12.0f) {
+			if (!madeText5) {
+				Destroy (text2);
+				text5 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText5"), playerPosition, Quaternion.identity) as GameObject;
+
+				madeText5 = true;
+			}
+		}
+
+		if (timer >= 13.0f) {
+			if (!madeText6) {
+				Destroy (text4);
+				text6 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText6"), otherPosition, Quaternion.identity) as GameObject;
+
+				madeText6 = true;
+			}
+		}
+
+		if (timer >= 15.0f) {
+			if (!madeText7) {
+				Destroy (text5);
+				if (status) {
+					//winning text
+					text7 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextWin0"), playerPosition, Quaternion.identity) as GameObject;
+				} else {
+					//losing text
+					text7 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose0 1"), playerPosition, Quaternion.identity) as GameObject;
+				}
+
+				madeText7 = true;
+			}
+		}
+
+		if (status) {
+			if (timer >= 16.0f) {
+				if (!madeText8) {
+					Destroy (text7);
+					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextWin1"), playerPosition, Quaternion.identity) as GameObject;
+					madeText8 = true;
+				}
+			}
+
+			if (timer >= 20.0f) {
+				clear ();
+			}
+		} else {
+			if (timer >= 16.0f) {
+				if (!madeText8) {
+					Destroy (text6);
+					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose1"), otherPosition, Quaternion.identity) as GameObject;
+					madeText8 = true;
+				}
+			}
+
+			if (timer >= 17.0f) {
+				if (!madeText9) {
+					Destroy (text8);
+					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose2"), otherPosition, Quaternion.identity) as GameObject;
+					madeText9 = true;
+				}
+			}
+
+			if (timer >= 21.0f) {
+				clear ();
+			}
+		}
+
 
 		//increments timer based on real time
 		timer += Time.deltaTime;
+	}
+
+	void clear(){
+		battleList = GameObject.FindGameObjectsWithTag ("HoboConvo");
+		for (int i = 0; i < battleList.Length; i++) {
+			//DEBUG
+			//print (i);
+			if (battleList [i] != null) {
+				Destroy (battleList [i]);
+			}
+		}
+		GameObject StateController = GameObject.Find ("StateController");
+		StateController.GetComponent<StateController>().gameState = "OverWorld";
+		//setting the successfulcounter
+		if (status) {
+			int successfulCounter = PlayerPrefs.GetInt ("SuccessfulCounter") + 1;
+			PlayerPrefs.SetInt("SuccessfulCounter", successfulCounter);
+			print(PlayerPrefs.GetInt ("SuccessfulCounter"));
+		} else {
+
+		}
+
+		Destroy (gameObject);
+
+
 	}
 }
