@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class NoEndingText : MonoBehaviour {
+	private float timer;
 
 	// Use this for initialization
 	void Start () {
