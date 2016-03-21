@@ -26,11 +26,11 @@ public class DodgeController : MonoBehaviour {
 		while(timeLeft > 0.0f) {
 			GameObject Thing = Things [Random.Range (0, Things.Length)];
 
-			Instantiate (Thing, (new Vector3 (
+			Instantiate (Thing, new Vector3 (
 				9,
 				Random.Range (-maxHeight, maxHeight),
-				0
-			)), Quaternion.identity);
+				-3.5f
+			), Quaternion.identity);
 
 			yield return new WaitForSeconds (Random.Range (0.5f, 1.0f));
 		}
