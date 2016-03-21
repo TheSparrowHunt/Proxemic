@@ -12,7 +12,7 @@ public class bootToMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (timer >= 15.0f) {
+		if (timer >= 20.0f) {
 			SceneManager.LoadScene ("Title");
 
 		}
