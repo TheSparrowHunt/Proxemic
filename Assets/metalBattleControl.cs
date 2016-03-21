@@ -107,7 +107,7 @@ public class metalBattleControl : MonoBehaviour {
 			}
 		}
 
-		if (timer >= 10.0f) {
+		if (timer >= 11.0f) {
 			if (!madeText4) {
 				Destroy (text3);
 				text4 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText4"), otherPosition, Quaternion.identity) as GameObject;
@@ -116,7 +116,7 @@ public class metalBattleControl : MonoBehaviour {
 			}
 		}
 
-		if (timer >= 12.0f) {
+		if (timer >= 13.0f) {
 			if (!madeText5) {
 				Destroy (text2);
 				text5 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText5"), playerPosition, Quaternion.identity) as GameObject;
@@ -125,7 +125,7 @@ public class metalBattleControl : MonoBehaviour {
 			}
 		}
 
-		if (timer >= 13.0f) {
+		if (timer >= 14.0f) {
 			if (!madeText6) {
 				Destroy (text4);
 				text6 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText6"), otherPosition, Quaternion.identity) as GameObject;
@@ -134,7 +134,7 @@ public class metalBattleControl : MonoBehaviour {
 			}
 		}
 
-		if (timer >= 15.0f) {
+		if (timer >= 16.0f) {
 			if (!madeText7) {
 				Destroy (text5);
 				if (status) {
@@ -150,7 +150,7 @@ public class metalBattleControl : MonoBehaviour {
 		}
 
 		if (status) {
-			if (timer >= 16.0f) {
+			if (timer >= 17.0f) {
 				if (!madeText8) {
 					Destroy (text7);
 					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextWin1"), playerPosition, Quaternion.identity) as GameObject;
@@ -158,11 +158,11 @@ public class metalBattleControl : MonoBehaviour {
 				}
 			}
 
-			if (timer >= 20.0f) {
+			if (timer >= 21.0f) {
 				clear ();
 			}
 		} else {
-			if (timer >= 16.0f) {
+			if (timer >= 17.0f) {
 				if (!madeText8) {
 					Destroy (text6);
 					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose1"), otherPosition, Quaternion.identity) as GameObject;
@@ -170,7 +170,7 @@ public class metalBattleControl : MonoBehaviour {
 				}
 			}
 
-			if (timer >= 17.0f) {
+			if (timer >= 18.0f) {
 				if (!madeText9) {
 					Destroy (text8);
 					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose2"), otherPosition, Quaternion.identity) as GameObject;
@@ -178,7 +178,7 @@ public class metalBattleControl : MonoBehaviour {
 				}
 			}
 
-			if (timer >= 21.0f) {
+			if (timer >= 22.0f) {
 				clear ();
 			}
 		}
