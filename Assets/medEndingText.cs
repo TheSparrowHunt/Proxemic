@@ -27,6 +27,7 @@ public class medEndingText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PlayerPrefs.SetInt ("Ending2", 1);
 		timer = 0.0f;
 	}
 

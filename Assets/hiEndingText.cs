@@ -25,6 +25,7 @@ public class hiEndingText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PlayerPrefs.SetInt ("Ending3", 1);
 		timer = 0.0f;
 	}
 
