@@ -21,7 +21,7 @@ public class Menu_Loader : MonoBehaviour {
 		PlayerPrefs.SetString("PreviousRoom", "");
 		PlayerPrefs.SetInt("HoboInteracted", 0);
 		PlayerPrefs.SetInt("MetalInteracted", 0);
-
+		PlayerPrefs.SetInt ("IDInteracted", 0);
 
 
 
