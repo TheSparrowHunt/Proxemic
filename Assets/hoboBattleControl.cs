@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class hoboBattleControl : MonoBehaviour {
-	private int counter;
+//	private int counter;
 
 	private GameObject hobotext0;
 	private bool hobotext0generated = false;
@@ -38,7 +38,7 @@ public class hoboBattleControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		timer = 0.0f;
-		counter = 0;
+//		counter = 0;
 	}
 	
 	// Update is called once per frame
@@ -154,7 +154,7 @@ public class hoboBattleControl : MonoBehaviour {
 
 
 
-		counter++;
+//		counter++;
 		timer += Time.deltaTime;
 	}
 }
