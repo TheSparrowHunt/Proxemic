@@ -26,6 +26,11 @@ public class whichEnd : MonoBehaviour {
 			SceneManager.LoadScene ("Ending_2");
 
 		}
+		if (WhatEnding == 3) {
+
+			SceneManager.LoadScene ("Ending_3");
+
+		}
 	}
 	
 	// Update is called once per frame
