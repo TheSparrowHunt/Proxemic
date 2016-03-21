@@ -12,6 +12,7 @@ public class NoEndingText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PlayerPrefs.SetInt ("Ending0", 1);
 			timer = 0.0f;
 		}
 

@@ -20,6 +20,7 @@ public class LowEndingText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PlayerPrefs.SetInt ("Ending1", 1);
 		timer = 0.0f;
 	}
 

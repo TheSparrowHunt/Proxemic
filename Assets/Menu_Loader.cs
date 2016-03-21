@@ -31,9 +31,6 @@ public class Menu_Loader : MonoBehaviour {
 		if (!PlayerPrefs.HasKey("Ending1")){
 			PlayerPrefs.SetInt("Ending1", 0);
 		}
-		if (!PlayerPrefs.HasKey("Ending1")){
-			PlayerPrefs.SetInt("Ending1", 0);
-		}
 		if (!PlayerPrefs.HasKey("Ending2")){
 			PlayerPrefs.SetInt("Ending2", 0);
 		}
@@ -51,6 +48,9 @@ public class Menu_Loader : MonoBehaviour {
 		}
 		if (!PlayerPrefs.HasKey("Ending7")){
 			PlayerPrefs.SetInt("Ending7", 0);
+		}
+		if (!PlayerPrefs.HasKey("Ending8")){
+			PlayerPrefs.SetInt("Ending8", 0);
 		}
 
 		//DEBUG
