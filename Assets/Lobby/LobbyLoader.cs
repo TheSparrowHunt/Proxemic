@@ -8,6 +8,10 @@ public class LobbyLoader : MonoBehaviour {
 	public Vector3 playerPositionFromSocietyShowcase = new Vector3 (8.0f, 0.0f, -1.0f);
 	public Vector3 playerPositionFromLab = new Vector3 (0.0f, 3.0f, -1.0f);
 
+	private GameObject metalInteractable;
+	private GameObject metalUninteractable;
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -29,6 +33,13 @@ public class LobbyLoader : MonoBehaviour {
 		//sets the string ready for when player goes into next scene
 		PlayerPrefs.SetString ("PreviousRoom", "Lobby");
 	
+
+		if (PlayerPrefs.GetInt ("MetalInteracted") == 0) {
+			metalInteractable = Instantiate (Resources.Load ("Prefab/metal"), new Vector3 (-6.0f, 2.0f, -0.5f), Quaternion.identity) as GameObject;
+		} else {
+			metalInteractable = Instantiate (Resources.Load ("Prefab/metal 1"), new Vector3 (-6.0f, 2.0f, -0.5f), Quaternion.identity) as GameObject;
+		}
+
 	}
 	
 

@@ -20,6 +20,7 @@ public class Menu_Loader : MonoBehaviour {
 		//values that will be used for navigation and time changes
 		PlayerPrefs.SetString("PreviousRoom", "");
 		PlayerPrefs.SetInt("HoboInteracted", 0);
+		PlayerPrefs.SetInt("MetalInteracted", 0);
 
 
 

@@ -46,9 +46,18 @@ public class CommunicationScript : MonoBehaviour {
 				StateController.GetComponent<StateController>().interacted = "hobo";
 
 
-				print("Interacted with hobo");
+				//print("Interacted with hobo");
 
 				makeBattle = Instantiate (Resources.Load ("Prefab/MakeBattle"), new Vector3(0.0f,0.0f,-1.0f), Quaternion.identity) as GameObject;
+			}
+			if (other.gameObject.name == "metal(Clone)") {
+				GameObject StateController = GameObject.Find ("StateController");
+				StateController.GetComponent<StateController>().interacted = "metal";
+
+
+				//print("Interacted with hobo");
+
+				makeBattle = Instantiate (Resources.Load ("Prefab/metal/makeBattleMetal"), new Vector3(0.0f,0.0f,-1.0f), Quaternion.identity) as GameObject;
 			}
 
 
