@@ -73,8 +73,8 @@ public class IDCardBattleControl : MonoBehaviour {
 
 		if (timer >= 1.5f) {
 			if (!madeText1) {
-				Destroy (text0);
-				text1 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText1"), otherPosition, Quaternion.identity) as GameObject;
+				
+				text1 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDText1"), playerPosition, Quaternion.identity) as GameObject;
 
 				madeText1 = true;
 			}
@@ -82,103 +82,104 @@ public class IDCardBattleControl : MonoBehaviour {
 
 		if (timer >= 3.0f) {
 			if (!madeText2) {
-
-				text2 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText2"), playerPosition, Quaternion.identity) as GameObject;
+				Destroy (text0);
+				text2 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDText2"), otherPosition, Quaternion.identity) as GameObject;
 
 				madeText2 = true;
 			}
 		}
 
-		if (timer >= 4.0f) {
-			if (!madeGame) {
 
-				game = Instantiate (Resources.Load ("Prefab/Dodgems/DodgeInstantiator"), playerPosition, Quaternion.identity) as GameObject;
 
-				madeGame = true;
-			}
-		}
-
-		if (timer >= 9.0f) {
+		if (timer >= 5.0f) {
 			if (!madeText3) {
-				Destroy (text1);
-				text3 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText3"), otherPosition, Quaternion.identity) as GameObject;
+				Destroy (text2);
+				text3 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDText3"), otherPosition, Quaternion.identity) as GameObject;
 
 				madeText3 = true;
 			}
 		}
 
-		if (timer >= 10.0f) {
+		if (timer >= 5.0f) {
+			if (!madeGame) {
+				//Destroy (text2);
+				game = Instantiate (Resources.Load ("Prefab/Catch/CatchInstantiator"), new Vector3 (0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+
+				madeGame = true;
+			}
+		}
+
+
+
+		if (timer >= 21.0f) {
 			if (!madeText4) {
-				Destroy (text3);
-				text4 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText4"), otherPosition, Quaternion.identity) as GameObject;
+				Destroy (text1);
+				if (status) {
+					//winning text
+					text4 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextWin0"), playerPosition, Quaternion.identity) as GameObject;
+				} else {
+					//losing text
+					text4 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextLose0"), playerPosition, Quaternion.identity) as GameObject;
+				}
 
 				madeText4 = true;
 			}
 		}
 
-		if (timer >= 12.0f) {
-			if (!madeText5) {
-				Destroy (text2);
-				text5 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText5"), playerPosition, Quaternion.identity) as GameObject;
-
-				madeText5 = true;
-			}
-		}
-
-		if (timer >= 13.0f) {
-			if (!madeText6) {
-				Destroy (text4);
-				text6 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalText6"), otherPosition, Quaternion.identity) as GameObject;
-
-				madeText6 = true;
-			}
-		}
-
-		if (timer >= 15.0f) {
-			if (!madeText7) {
-				Destroy (text5);
-				if (status) {
-					//winning text
-					text7 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextWin0"), playerPosition, Quaternion.identity) as GameObject;
-				} else {
-					//losing text
-					text7 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose0 1"), playerPosition, Quaternion.identity) as GameObject;
-				}
-
-				madeText7 = true;
-			}
-		}
-
 		if (status) {
-			if (timer >= 16.0f) {
-				if (!madeText8) {
-					Destroy (text7);
-					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextWin1"), playerPosition, Quaternion.identity) as GameObject;
-					madeText8 = true;
+			if (timer >= 24.0f) {
+				if (!madeText5) {
+					Destroy (text3);
+					text5 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextWin1"), otherPosition, Quaternion.identity) as GameObject;
+					madeText5 = true;
 				}
 			}
 
-			if (timer >= 20.0f) {
+			if (timer >= 30.0f) {
 				clear ();
 			}
 		} else {
-			if (timer >= 16.0f) {
+			if (timer >= 24.0f) {
+				if (!madeText5) {
+					Destroy (text4);
+					text5 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextLose1"), playerPosition, Quaternion.identity) as GameObject;
+					madeText5 = true;
+				}
+			}
+
+			if (timer >= 26.0f) {
+				if (!madeText6) {
+					Destroy (text3);
+					text6 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextLose2"), otherPosition, Quaternion.identity) as GameObject;
+					madeText6 = true;
+				}
+			}
+
+			if (timer >= 28.0f) {
+				if (!madeText7) {
+					Destroy (text5);
+					text7 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextLose3"), playerPosition, Quaternion.identity) as GameObject;
+					madeText7 = true;
+				}
+			}
+
+			if (timer >= 30.0f) {
 				if (!madeText8) {
 					Destroy (text6);
-					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose1"), otherPosition, Quaternion.identity) as GameObject;
+					text8 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextLose4"), otherPosition, Quaternion.identity) as GameObject;
 					madeText8 = true;
 				}
 			}
 
-			if (timer >= 17.0f) {
+			if (timer >= 32.0f) {
 				if (!madeText9) {
 					Destroy (text8);
-					text8 = Instantiate (Resources.Load ("Prefab/metal/metalText/metalTextLose2"), otherPosition, Quaternion.identity) as GameObject;
+					text9 = Instantiate (Resources.Load ("Prefab/IDCard/IDCardText/IDTextLose5"), otherPosition, Quaternion.identity) as GameObject;
 					madeText9 = true;
 				}
 			}
 
-			if (timer >= 21.0f) {
+			if (timer >= 36.0f) {
 				clear ();
 			}
 		}
@@ -203,6 +204,7 @@ public class IDCardBattleControl : MonoBehaviour {
 		if (status) {
 			int successfulCounter = PlayerPrefs.GetInt ("SuccessfulCounter") + 1;
 			PlayerPrefs.SetInt("SuccessfulCounter", successfulCounter);
+			//DEBUG
 			print(PlayerPrefs.GetInt ("SuccessfulCounter"));
 		} else {
 
