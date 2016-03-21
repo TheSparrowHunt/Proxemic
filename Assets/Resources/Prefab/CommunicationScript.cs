@@ -38,6 +38,7 @@ public class CommunicationScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
+		
 		//fill this with every interaction in the game
 		//and have it instantiate the object that makes the conversation/battles
 		if (other.gameObject.tag == "Interactable") {
@@ -58,6 +59,16 @@ public class CommunicationScript : MonoBehaviour {
 				//print("Interacted with hobo");
 
 				makeBattle = Instantiate (Resources.Load ("Prefab/metal/makeBattleMetal"), new Vector3(0.0f,0.0f,-1.0f), Quaternion.identity) as GameObject;
+			}
+
+			if (other.gameObject.name == "IDPerson(Clone)") {
+				GameObject StateController = GameObject.Find ("StateController");
+				StateController.GetComponent<StateController>().interacted = "IDPerson";
+
+
+				print("Interacted with IDPerson");
+
+				makeBattle = Instantiate (Resources.Load ("Prefab/IDCard/makeBattleID"), new Vector3(0.0f,0.0f,-1.0f), Quaternion.identity) as GameObject;
 			}
 
 
